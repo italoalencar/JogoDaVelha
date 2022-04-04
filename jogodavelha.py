@@ -9,7 +9,7 @@ def criar_tab():
     return tab    
 
 # Mostrar o Tabuleiro
-def printar_tab():
+def printar_tab(tab):
     print('   1\t   2\t   3')      
     print('A    %s\t|  %s  |\t  %s' % (tab[0][0],tab[0][1],tab[0][2]))
     print(' ',19*'-')
@@ -59,7 +59,7 @@ def preencher_x(tab,jogada):
     if tab[jogada[0]][jogada[1]] == ' ':
         tab[jogada[0]][jogada[1]] = 'X'
         os.system('cls')
-        printar_tab()
+        printar_tab(tab)
     else:
         print('*Espaço marcado, Tente outra jogada')
         print("")
@@ -104,7 +104,7 @@ def preencher_O(tab,jogada):
     if tab[jogada[0]][jogada[1]] == ' ':
         tab[jogada[0]][jogada[1]] = 'O'
         os.system('cls')
-        printar_tab()
+        printar_tab(tab)
     else:
         print('*Espaço marcado, Tente outra jogada')
         print("")
@@ -137,7 +137,7 @@ while maisum == 1:
     jogadas = 0
 
     tab = criar_tab()
-    printar_tab()
+    printar_tab(tab)
     while teste == False and jogadas < 9:
         if vez == 1:
             jogadaX(tab)
